@@ -1,0 +1,29 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #e4e4e4;
+    z-index: 999;
+
+    .nav-left,
+    .nav-right {
+        display: flex;
+        .nav-link {
+            color: #141301;
+            padding: 10px;
+            .bottle-icon {
+                font-size: 20px;
+            }
+            &:hover {
+                color: #69385c;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .nav-right {
+        width: 240px;
+        justify-content: space-around;
+    }
+}

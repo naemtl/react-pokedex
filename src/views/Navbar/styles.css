@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: #e4e4e4;
+  z-index: 999;
+}
+
+.nav-container .nav-left,
+.nav-container .nav-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-container .nav-left .nav-link,
+.nav-container .nav-right .nav-link {
+  color: #141301;
+  padding: 10px;
+}
+
+.nav-container .nav-left .nav-link .bottle-icon,
+.nav-container .nav-right .nav-link .bottle-icon {
+  font-size: 20px;
+}
+
+.nav-container .nav-left .nav-link:hover,
+.nav-container .nav-right .nav-link:hover {
+  color: #69385c;
+  text-decoration: underline;
+}
+
+.nav-container .nav-right {
+  width: 240px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=styles.css.map */

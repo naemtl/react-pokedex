@@ -1,10 +1,12 @@
 import React from 'react'
 
+import "./styles.css"
+
 const Navbar = () => {
     return (
-        <div className="navbar-container">
-
-        </div>
+        <nav className="nav-container">
+            Matthew's Pokedex!
+        </nav>
     )
 }
 

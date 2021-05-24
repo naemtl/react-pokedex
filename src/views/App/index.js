@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Navbar from "./views/Navbar";
-import Pokedex from "./views/Pokedex";
+import Navbar from "../Navbar";
+import Pokedex from "../Pokedex";
+
+import "./styles.css"
 
 const App = () => {
 
