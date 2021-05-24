@@ -13,7 +13,7 @@ const Card = ({ pokemon }) => {
                         <div className="card-name">
                             {pokemon.name}
                         </div>
-                        <div>#{pokemon.id}</div>
+                        <div className="card-id">#{pokemon.id}</div>
                     </div>
                     <div className="image-types-container">
                         <div className="card-image">
@@ -25,18 +25,20 @@ const Card = ({ pokemon }) => {
                             })}
                         </div>
                     </div>
-                    <div className="card-info">
-                        <div className="card-data card-data-weight">
-                            <div className="title">Weight</div>
-                            <div>{pokemon.weight}</div>
+                    <div className="card-info-container">
+                        <div className="weight-height-container">
+                            <div className="card-data card-data-weight">
+                                <div className="title">Avg. weight:</div>
+                                <div>{pokemon.weight} lbs.</div>
+                            </div>
+                            <div className="card-data card-data-height">
+                                <div className="title">Avg. height:</div>
+                                <div>{pokemon.height} ft.</div>
+                            </div>
                         </div>
-                        <div className="card-data card-data-height">
-                            <div className="title">Height</div>
-                            <div>{pokemon.height}</div>
+                        <div className="card-data card-data-evolution">
+                            <div className="title">Evolutions:</div>
                         </div>
-                    </div>
-                    <div className="card-data card-data-evolution">
-                        <div className="title">Evolutions</div>
                     </div>
                 </>) : "Select a Pokemon!"
             }

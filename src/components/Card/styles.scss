@@ -27,14 +27,35 @@
             }
         }
     }
-    .card-info {
-        display: flex;
-        flex-direction: column;
+    .card-info-container {
+        .weight-height-container {
+            display: flex;
+            flex-direction: column;
+        }
         .card-data {
             display: flex;
             .title {
                 margin-right: 5px;
             }
         }
+        .weight-height-container,
+        .card-data-evolution {
+            width: fit-content;
+        }
+    }
+
+    .name-id-container,
+    .image-types-container,
+    .card-info-container,
+    .weight-height-container {
+        margin-bottom: 20px;
+    }
+
+    .card-id,
+    .weight-height-container,
+    .card-data-evolution {
+        background-color: #b198ae;
+        border-radius: 5px;
+        padding: 5px 10px;
     }
 }

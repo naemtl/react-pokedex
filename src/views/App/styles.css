@@ -1,4 +1,12 @@
 /* GLOBAL AND DEFAULT STYLES */
+/* Custom font */
+@font-face {
+  font-family: "PokeDex";
+  src: url("../../assets/fonts/pokedex-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -20,7 +28,8 @@ body {
 
 /* Set core body defaults */
 body {
-  font-size: 15px;
+  font-family: "PokeDex";
+  font-size: 18px;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
