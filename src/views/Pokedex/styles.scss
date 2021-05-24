@@ -1,0 +1,18 @@
+.pokedex-container {
+    display: flex;
+    justify-content: space-around;
+    .pokemon-list-container {
+        .pagination-controls {
+        }
+        .pokemon-list {
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            .pokemon-list-item {
+                margin: 5px 0;
+                cursor: pointer;
+            }
+        }
+    }
+    .pokemon-card-container {
+    }
+}

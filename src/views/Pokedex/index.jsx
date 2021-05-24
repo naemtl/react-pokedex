@@ -6,8 +6,11 @@ import Card from "../../components/Card";
 
 import { getAllPokemon, getSinglePokemon } from "../../services";
 
+import "./styles.css"
+
 const Pokedex = () => {
     const [pokemonData, setPokemonData] = useState([])
+    const [selectedPokemon, setSelectedPokemon] = useState(null)
     const [nextUrl, setNextUrl] = useState("")
     const [prevUrl, setPrevUrl] = useState("")
     const [loading, setLoading] = useState(true)
@@ -61,22 +64,29 @@ const Pokedex = () => {
     }
 
     return (
-        <div>
+        <div className="pokedex-container">
             {
                 loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
                     <>
-                        <div className="button-container">
-                            <button onClick={prev} disabled={!prevUrl}>Prev</button>
-                            <button onClick={next} disabled={!nextUrl}>Next</button>
+                        <div className="pokemon-card-container">
+                            {selectedPokemon ? <Card pokemon={selectedPokemon} /> : "Select a Pokemon"}
                         </div>
-                        <div className="grid-container">
-                            {/* {pokemonData.map((pokemon) => {
-                                return (<div key={pokemon.id}>{`${pokemon.id}. ${pokemon.name}`}</div>)
-                            })} */}
-                            {pokemonData.map((pokemon, i) => {
-                                return <Card key={i} pokemon={pokemon} />
-                            })}
+                        <div className="pokemon-list-container">
+                            <div className="pokemon-list">
+                                {pokemonData.map((pokemon) => {
+                                    return (
+                                        <div className="pokemon-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
+                                            {`${pokemon.id}. ${pokemon.name}`}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className="pagination-controls">
+                                <button onClick={prev} disabled={!prevUrl}>Prev</button>
+                                <button onClick={next} disabled={!nextUrl}>Next</button>
+                            </div>
                         </div>
+
                     </>
                 )
             }

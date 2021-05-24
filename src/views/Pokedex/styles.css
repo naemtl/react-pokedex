@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+.pokedex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pokedex-container .pokemon-list-container .pokemon-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (150px)[2];
+      grid-template-columns: repeat(2, 150px);
+}
+
+.pokedex-container .pokemon-list-container .pokemon-list .pokemon-list-item {
+  margin: 5px 0;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
