@@ -28,7 +28,7 @@ body {
 
 /* Set core body defaults */
 body {
-  font-family: "PokeDex";
+  font-family: "PokeDex", "monospace";
   font-size: 18px;
   min-height: 100vh;
   scroll-behavior: smooth;

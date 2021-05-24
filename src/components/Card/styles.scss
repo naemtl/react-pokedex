@@ -1,5 +1,8 @@
 .card-container-inner {
     margin: 20px;
+    background-color: #93548b;
+    border: 1px solid #000;
+    padding: 5px;
     .name-id-container {
         display: flex;
         justify-content: space-between;
@@ -11,8 +14,6 @@
     .image-types-container {
         display: flex;
         justify-content: space-around;
-        .card-image {
-        }
         .card-types {
             display: flex;
             flex-direction: column;

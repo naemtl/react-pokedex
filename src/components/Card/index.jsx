@@ -38,6 +38,11 @@ const Card = ({ pokemon }) => {
                         </div>
                         <div className="card-data card-data-evolution">
                             <div className="title">Evolutions:</div>
+                            <div className="evolution-list">
+                                <div>One</div>
+                                <div>Two</div>
+                                <div>Three</div>
+                            </div>
                         </div>
                     </div>
                 </>) : "Select a Pokemon!"
