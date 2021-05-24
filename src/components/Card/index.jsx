@@ -10,13 +10,13 @@ const Card = ({ pokemon }) => {
             <div className="card-screen">
                 {pokemon ? (
                     <>
-                        <div className="name-id-container">
+                        <div className="card-name-id-container">
                             <div className="card-name">
                                 {pokemon.name}
                             </div>
                             <div className="card-id">#{pokemon.id}</div>
                         </div>
-                        <div className="image-types-container">
+                        <div className="card-image-types-container">
                             <div className="card-image">
                                 <img src={pokemon.sprites.front_default} alt={`Sprite of ${pokemon.name}`} />
                             </div>
@@ -27,7 +27,7 @@ const Card = ({ pokemon }) => {
                             </div>
                         </div>
                         <div className="card-info-container">
-                            <div className="weight-height-container">
+                            <div className="card-weight-height-container">
                                 <div className="card-data card-data-weight">
                                     <div className="title">Avg. weight:</div>
                                     <div>{pokemon.weight} lbs.</div>
@@ -37,9 +37,9 @@ const Card = ({ pokemon }) => {
                                     <div>{pokemon.height} ft.</div>
                                 </div>
                             </div>
-                            <div className="card-data card-data-evolution">
+                            <div className="card-data card-evolution-container">
                                 <div className="title">Evolutions:</div>
-                                <div className="evolution-list">
+                                <div className="card-evolution-list">
                                     <div>One</div>
                                     <div>Two</div>
                                     <div>Three</div>

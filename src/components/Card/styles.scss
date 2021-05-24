@@ -10,7 +10,7 @@
         border: 3px solid #000;
         padding: 5px;
         min-height: 345px;
-        .name-id-container {
+        .card-name-id-container {
             display: flex;
             justify-content: space-between;
             .card-name {
@@ -18,7 +18,7 @@
                 text-transform: capitalize;
             }
         }
-        .image-types-container {
+        .card-image-types-container {
             display: flex;
             justify-content: space-around;
             .card-types {
@@ -36,7 +36,7 @@
             }
         }
         .card-info-container {
-            .weight-height-container {
+            .card-weight-height-container {
                 display: flex;
                 flex-direction: column;
             }
@@ -46,22 +46,22 @@
                     margin-right: 5px;
                 }
             }
-            .weight-height-container,
-            .card-data-evolution {
+            .card-weight-height-container,
+            .card-evolution-container {
                 width: fit-content;
             }
         }
 
-        .name-id-container,
-        .image-types-container,
+        .card-name-id-container,
+        .card-image-types-container,
         .card-info-container,
-        .weight-height-container {
+        .card-weight-height-container {
             margin-bottom: 10px;
         }
 
         .card-id,
-        .weight-height-container,
-        .card-data-evolution {
+        .card-weight-height-container,
+        .card-evolution-container {
             background-color: #b198ae;
             border-radius: 5px;
             padding: 5px 10px;

@@ -14,7 +14,7 @@
   min-height: 345px;
 }
 
-.card-container-inner .card-screen .name-id-container {
+.card-container-inner .card-screen .card-name-id-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,12 +23,12 @@
           justify-content: space-between;
 }
 
-.card-container-inner .card-screen .name-id-container .card-name {
+.card-container-inner .card-screen .card-name-id-container .card-name {
   color: #fff;
   text-transform: capitalize;
 }
 
-.card-container-inner .card-screen .image-types-container {
+.card-container-inner .card-screen .card-image-types-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +36,7 @@
       justify-content: space-around;
 }
 
-.card-container-inner .card-screen .image-types-container .card-types {
+.card-container-inner .card-screen .card-image-types-container .card-types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +49,7 @@
           justify-content: center;
 }
 
-.card-container-inner .card-screen .image-types-container .card-types .card-single-type {
+.card-container-inner .card-screen .card-image-types-container .card-types .card-single-type {
   margin: 2px 5px;
   padding: 3px 6px;
   width: 65px;
@@ -58,7 +58,7 @@
   text-transform: capitalize;
 }
 
-.card-container-inner .card-screen .card-info-container .weight-height-container {
+.card-container-inner .card-screen .card-info-container .card-weight-height-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,23 +78,23 @@
   margin-right: 5px;
 }
 
-.card-container-inner .card-screen .card-info-container .weight-height-container,
-.card-container-inner .card-screen .card-info-container .card-data-evolution {
+.card-container-inner .card-screen .card-info-container .card-weight-height-container,
+.card-container-inner .card-screen .card-info-container .card-evolution-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.card-container-inner .card-screen .name-id-container,
-.card-container-inner .card-screen .image-types-container,
+.card-container-inner .card-screen .card-name-id-container,
+.card-container-inner .card-screen .card-image-types-container,
 .card-container-inner .card-screen .card-info-container,
-.card-container-inner .card-screen .weight-height-container {
+.card-container-inner .card-screen .card-weight-height-container {
   margin-bottom: 10px;
 }
 
 .card-container-inner .card-screen .card-id,
-.card-container-inner .card-screen .weight-height-container,
-.card-container-inner .card-screen .card-data-evolution {
+.card-container-inner .card-screen .card-weight-height-container,
+.card-container-inner .card-screen .card-evolution-container {
   background-color: #b198ae;
   border-radius: 5px;
   padding: 5px 10px;
