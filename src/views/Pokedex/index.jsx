@@ -68,8 +68,20 @@ const Pokedex = () => {
             <div className="pokedex-container">
                 {
                     loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
-                        <>
+                        <div className="pokedex-container-inner">
                             <div className="pokedex-card-container">
+                                <div className="pokedex-camera-container">
+                                    <div className="pokedex-camera-lense">
+                                        <div className="lense-inner">
+                                            <div className="lense-glare"></div>
+                                        </div>
+                                    </div>
+                                    <div className="pokedex-camera-lights">
+                                        <div className="red">1</div>
+                                        <div className="yellow">2</div>
+                                        <div className="green">3</div>
+                                    </div>
+                                </div>
                                 <Card pokemon={selectedPokemon} />
                             </div>
                             <div className="pokedex-hinge">
@@ -77,22 +89,23 @@ const Pokedex = () => {
                                 <div></div>
                             </div>
                             <div className="pokedex-list-container">
-                                <div className="pokedex-list">
-                                    {pokemonData.map((pokemon) => {
-                                        return (
-                                            <div className="pokedex-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
-                                                {`${pokemon.id}. ${pokemon.name}`}
-                                            </div>
-                                        )
-                                    })}
+                                <div className="pokedex-list-container-inner">
+                                    <div className="pokedex-list">
+                                        {pokemonData.map((pokemon) => {
+                                            return (
+                                                <div className="pokedex-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
+                                                    {`${pokemon.id}. ${pokemon.name}`}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                                 <div className="pagination-controls">
                                     <button onClick={prev} disabled={!prevUrl}>Prev</button>
                                     <button onClick={next} disabled={!nextUrl}>Next</button>
                                 </div>
                             </div>
-
-                        </>
+                        </div>
                     )
                 }
             </div >

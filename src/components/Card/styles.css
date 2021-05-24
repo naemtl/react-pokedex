@@ -1,11 +1,19 @@
 .card-container-inner {
+  background-color: #dfdedf;
   margin: 20px;
+  padding: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.card-container-inner .card-screen {
+  margin: 10px;
   background-color: #93548b;
-  border: 1px solid #000;
+  border: 3px solid #000;
   padding: 5px;
 }
 
-.card-container-inner .name-id-container {
+.card-container-inner .card-screen .name-id-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,12 +22,12 @@
           justify-content: space-between;
 }
 
-.card-container-inner .name-id-container .card-name {
+.card-container-inner .card-screen .name-id-container .card-name {
   color: #fff;
   text-transform: capitalize;
 }
 
-.card-container-inner .image-types-container {
+.card-container-inner .card-screen .image-types-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,7 +35,7 @@
       justify-content: space-around;
 }
 
-.card-container-inner .image-types-container .card-types {
+.card-container-inner .card-screen .image-types-container .card-types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,7 +48,7 @@
           justify-content: center;
 }
 
-.card-container-inner .image-types-container .card-types .card-single-type {
+.card-container-inner .card-screen .image-types-container .card-types .card-single-type {
   margin: 2px 5px;
   padding: 3px 6px;
   width: 65px;
@@ -49,7 +57,7 @@
   text-transform: capitalize;
 }
 
-.card-container-inner .card-info-container .weight-height-container {
+.card-container-inner .card-screen .card-info-container .weight-height-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,33 +67,33 @@
           flex-direction: column;
 }
 
-.card-container-inner .card-info-container .card-data {
+.card-container-inner .card-screen .card-info-container .card-data {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.card-container-inner .card-info-container .card-data .title {
+.card-container-inner .card-screen .card-info-container .card-data .title {
   margin-right: 5px;
 }
 
-.card-container-inner .card-info-container .weight-height-container,
-.card-container-inner .card-info-container .card-data-evolution {
+.card-container-inner .card-screen .card-info-container .weight-height-container,
+.card-container-inner .card-screen .card-info-container .card-data-evolution {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.card-container-inner .name-id-container,
-.card-container-inner .image-types-container,
-.card-container-inner .card-info-container,
-.card-container-inner .weight-height-container {
-  margin-bottom: 20px;
+.card-container-inner .card-screen .name-id-container,
+.card-container-inner .card-screen .image-types-container,
+.card-container-inner .card-screen .card-info-container,
+.card-container-inner .card-screen .weight-height-container {
+  margin-bottom: 10px;
 }
 
-.card-container-inner .card-id,
-.card-container-inner .weight-height-container,
-.card-container-inner .card-data-evolution {
+.card-container-inner .card-screen .card-id,
+.card-container-inner .card-screen .weight-height-container,
+.card-container-inner .card-screen .card-data-evolution {
   background-color: #b198ae;
   border-radius: 5px;
   padding: 5px 10px;
