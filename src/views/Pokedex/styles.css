@@ -11,10 +11,28 @@
   display: grid;
   -ms-grid-columns: (150px)[2];
       grid-template-columns: repeat(2, 150px);
+  background-color: #45b2f0;
+  padding: 10px;
 }
 
 .pokedex-container .pokemon-list-container .pokemon-list .pokemon-list-item {
   margin: 5px 0;
+  padding: 0px 15px;
   cursor: pointer;
+  color: #fff;
+  border: 1px solid transparent;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.pokedex-container .pokemon-list-container .pokemon-list .pokemon-list-item:hover {
+  border-color: #fff;
+  border-radius: 10px;
+}
+
+.pokedex-container .pokemon-card-container {
+  background-color: #a860a0;
+  width: 320px;
 }
 /*# sourceMappingURL=styles.css.map */

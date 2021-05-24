@@ -7,12 +7,24 @@
         .pokemon-list {
             display: grid;
             grid-template-columns: repeat(2, 150px);
+            background-color: #45b2f0;
+            padding: 10px;
             .pokemon-list-item {
                 margin: 5px 0;
+                padding: 0px 15px;
                 cursor: pointer;
+                color: #fff;
+                border: 1px solid transparent;
+                width: fit-content;
+                &:hover {
+                    border-color: #fff;
+                    border-radius: 10px;
+                }
             }
         }
     }
     .pokemon-card-container {
+        background-color: #a860a0;
+        width: 320px;
     }
 }

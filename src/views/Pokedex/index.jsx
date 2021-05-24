@@ -64,33 +64,35 @@ const Pokedex = () => {
     }
 
     return (
-        <div className="pokedex-container">
-            {
-                loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
-                    <>
-                        <div className="pokemon-card-container">
-                            {selectedPokemon ? <Card pokemon={selectedPokemon} /> : "Select a Pokemon"}
-                        </div>
-                        <div className="pokemon-list-container">
-                            <div className="pokemon-list">
-                                {pokemonData.map((pokemon) => {
-                                    return (
-                                        <div className="pokemon-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
-                                            {`${pokemon.id}. ${pokemon.name}`}
-                                        </div>
-                                    )
-                                })}
+        <div className="master-container">
+            <div className="pokedex-container">
+                {
+                    loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
+                        <>
+                            <div className="pokemon-card-container">
+                                {selectedPokemon ? <Card pokemon={selectedPokemon} /> : "Select a Pokemon"}
                             </div>
-                            <div className="pagination-controls">
-                                <button onClick={prev} disabled={!prevUrl}>Prev</button>
-                                <button onClick={next} disabled={!nextUrl}>Next</button>
+                            <div className="pokemon-list-container">
+                                <div className="pokemon-list">
+                                    {pokemonData.map((pokemon) => {
+                                        return (
+                                            <div className="pokemon-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
+                                                {`${pokemon.id}. ${pokemon.name}`}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="pagination-controls">
+                                    <button onClick={prev} disabled={!prevUrl}>Prev</button>
+                                    <button onClick={next} disabled={!nextUrl}>Next</button>
+                                </div>
                             </div>
-                        </div>
 
-                    </>
-                )
-            }
-        </div >
+                        </>
+                    )
+                }
+            </div >
+        </div>
     )
 }
 

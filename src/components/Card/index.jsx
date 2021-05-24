@@ -6,12 +6,15 @@ import "./styles.css"
 
 const Card = ({ pokemon }) => {
     return (
-        <div className="card-container">
+        <div className="card-container-inner">
+            <div className="name-id-container">
+                <div className="card-name">
+                    {pokemon.name}
+                </div>
+                <div>#{pokemon.id}</div>
+            </div>
             <div className="card-image">
                 <img src={pokemon.sprites.front_default} alt={`Sprite of ${pokemon.name}`} />
-            </div>
-            <div className="card-name">
-                {pokemon.name}
             </div>
             <div className="card-types">
                 {pokemon.types.map((type, i) => {
@@ -20,17 +23,16 @@ const Card = ({ pokemon }) => {
             </div>
             <div className="card-info">
                 <div className="card-data card-data-weight">
-                    <p className="title">Weight</p>
-                    <p>{pokemon.weight}</p>
+                    <div className="title">Weight</div>
+                    <div>{pokemon.weight}</div>
                 </div>
                 <div className="card-data card-data-height">
-                    <p className="title">Height</p>
-                    <p>{pokemon.height}</p>
+                    <div className="title">Height</div>
+                    <div>{pokemon.height}</div>
                 </div>
-                <div className="card-data card-data-ability">
-                    <p className="title">Ability</p>
-                    <p>{pokemon.abilities[0].ability.name}</p>
-                </div>
+            </div>
+            <div className="card-data card-data-evolution">
+                <div className="title">Evolutions</div>
             </div>
         </div>
     )

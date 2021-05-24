@@ -1,0 +1,25 @@
+.card-container-inner {
+    margin: 20px;
+    .name-id-container {
+        display: flex;
+        justify-content: space-between;
+        .card-name {
+            color: #fff;
+            text-transform: capitalize;
+        }
+    }
+    .card-image {
+    }
+    .card-types {
+    }
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        .card-data {
+            display: flex;
+            .title {
+                margin-right: 5px;
+            }
+        }
+    }
+}
