@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import Card from "./components/Card";
+
 import { getAllPokemon, getSinglePokemon } from "./services";
 
 const App = () => {
@@ -7,7 +9,6 @@ const App = () => {
   const [nextUrl, setNextUrl] = useState("")
   const [prevUrl, setPrevUrl] = useState("")
   const [loading, setLoading] = useState(true)
-  // const initialUrl = "https://pokeapi.co/api/v2/pokemon"
 
   useEffect(() => {
     async function fetchData() {
@@ -29,14 +30,19 @@ const App = () => {
       }))
 
     setPokemonData(pokemonArray)
-    console.log("pokemon DATA", pokemonData);
   }
 
   return (
     <div>
       {
-      loading ? <h1>Loading...</h1> : (
-          <h1>Who's that Pokemon?</h1>
+        loading ? <h1>Loading...</h1> : (
+          <>
+            <div className="grid-container">
+              {pokemonData.map((pokemon, i) => {
+                return <Card key={i} pokemon={pokemon} />
+              })}
+            </div>
+          </>
         )
       }
     </div>
