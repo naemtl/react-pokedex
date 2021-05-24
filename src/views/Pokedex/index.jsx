@@ -77,9 +77,9 @@ const Pokedex = () => {
                                         </div>
                                     </div>
                                     <div className="pokedex-camera-lights">
-                                        <div className="red">1</div>
-                                        <div className="yellow">2</div>
-                                        <div className="green">3</div>
+                                        <div className="red"></div>
+                                        <div className="yellow"></div>
+                                        <div className="green"></div>
                                     </div>
                                 </div>
                                 <Card pokemon={selectedPokemon} />
