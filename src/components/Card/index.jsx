@@ -1,5 +1,7 @@
 import React from 'react'
 
+import typeColors from "../../helpers/typeColors";
+
 import "./styles.css"
 
 const Card = ({ pokemon }) => {
@@ -13,7 +15,7 @@ const Card = ({ pokemon }) => {
             </div>
             <div className="card-types">
                 {pokemon.types.map(type => {
-                    return <div className="card-single-type">{type.type.name}</div>
+                    return <div className="card-single-type" style={{ backgroundColor: typeColors[type.type.name] }}>{type.type.name}</div>
                 })}
             </div>
             <div className="card-info">

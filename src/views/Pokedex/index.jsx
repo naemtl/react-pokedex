@@ -56,7 +56,7 @@ const Pokedex = () => {
                 loading ? <h1>Loading...</h1> : (
                     <>
                         <div className="button-container">
-                            <button onClick={prev}>Prev</button>
+                            <button onClick={prev} disabled={!prevUrl}>Prev</button>
                             <button onClick={next}>Next</button>
                         </div>
                         <div className="grid-container">
