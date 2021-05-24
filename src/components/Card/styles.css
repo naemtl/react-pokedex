@@ -80,9 +80,22 @@
 
 .card-container-inner .card-screen .card-info-container .card-weight-height-container,
 .card-container-inner .card-screen .card-info-container .card-evolution-container {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  min-width: 100%;
+}
+
+.card-container-inner .card-screen .card-info-container .card-evolution-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-container-inner .card-screen .card-info-container .card-evolution-container .card-evolution-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100px)[2];
+      grid-template-columns: repeat(2, 100px);
+  grid-column-gap: 5px;
 }
 
 .card-container-inner .card-screen .card-name-id-container,

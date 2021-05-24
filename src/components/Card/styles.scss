@@ -48,7 +48,15 @@
             }
             .card-weight-height-container,
             .card-evolution-container {
-                width: fit-content;
+                min-width: 100%;
+            }
+            .card-evolution-container {
+                flex-direction: column;
+                .card-evolution-list {
+                    display: grid;
+                    grid-template-columns: repeat(2, 100px);
+                    grid-column-gap: 5px;
+                }
             }
         }
 

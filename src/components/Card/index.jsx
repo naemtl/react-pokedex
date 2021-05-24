@@ -40,9 +40,9 @@ const Card = ({ pokemon }) => {
                             <div className="card-data card-evolution-container">
                                 <div className="title">Evolutions:</div>
                                 <div className="card-evolution-list">
-                                    <div>One</div>
-                                    <div>Two</div>
-                                    <div>Three</div>
+                                    <div>Kangaskhan</div>
+                                    <div>Charmeleon</div>
+                                    <div>Hitmonchan</div>
                                 </div>
                             </div>
                         </div>
