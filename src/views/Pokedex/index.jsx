@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Icon } from '@iconify/react';
+import pokeballIcon from '@iconify-icons/mdi/pokeball';
 
 import Card from "../../components/Card";
 
@@ -15,13 +17,13 @@ const Pokedex = () => {
             const data = await getAllPokemon()
             setNextUrl(data.next)
             setPrevUrl(data.previous)
-            await loadPokemon(data.results)
+            await loadPokemonPage(data.results)
             setLoading(false)
         }
         fetchData()
     }, [])
 
-    const loadPokemon = async data => {
+    const loadPokemonPage = async data => {
         const pokemonArray = await Promise.all(
             data.map(async pokemon => {
                 const pokemonEntry = await getSinglePokemon(pokemon.url)
@@ -34,8 +36,16 @@ const Pokedex = () => {
     const next = async () => {
         setLoading(true)
         const data = await getAllPokemon(nextUrl)
-        await loadPokemon(data.results)
-        setNextUrl(data.next)
+
+        if (data.results[10].name === "mew") {
+            const newResults = data.results.slice(0, 11)
+            await loadPokemonPage(newResults)
+            setNextUrl("")
+        } else {
+            await loadPokemonPage(data.results)
+            setNextUrl(data.next)
+        }
+
         setPrevUrl(data.previous)
         setLoading(false)
     }
@@ -44,7 +54,7 @@ const Pokedex = () => {
         if (!prevUrl) return
         setLoading(true)
         const data = await getAllPokemon(prevUrl)
-        await loadPokemon(data.results)
+        await loadPokemonPage(data.results)
         setNextUrl(data.next)
         setPrevUrl(data.previous)
         setLoading(false)
@@ -53,13 +63,16 @@ const Pokedex = () => {
     return (
         <div>
             {
-                loading ? <h1>Loading...</h1> : (
+                loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
                     <>
                         <div className="button-container">
                             <button onClick={prev} disabled={!prevUrl}>Prev</button>
-                            <button onClick={next}>Next</button>
+                            <button onClick={next} disabled={!nextUrl}>Next</button>
                         </div>
                         <div className="grid-container">
+                            {/* {pokemonData.map((pokemon) => {
+                                return (<div key={pokemon.id}>{`${pokemon.id}. ${pokemon.name}`}</div>)
+                            })} */}
                             {pokemonData.map((pokemon, i) => {
                                 return <Card key={i} pokemon={pokemon} />
                             })}
@@ -67,7 +80,7 @@ const Pokedex = () => {
                     </>
                 )
             }
-        </div>
+        </div >
     )
 }
 

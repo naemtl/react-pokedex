@@ -14,8 +14,8 @@ const Card = ({ pokemon }) => {
                 {pokemon.name}
             </div>
             <div className="card-types">
-                {pokemon.types.map(type => {
-                    return <div className="card-single-type" style={{ backgroundColor: typeColors[type.type.name] }}>{type.type.name}</div>
+                {pokemon.types.map((type, i) => {
+                    return <div key={i} className="card-single-type" style={{ backgroundColor: typeColors[type.type.name] }}>{type.type.name}</div>
                 })}
             </div>
             <div className="card-info">
