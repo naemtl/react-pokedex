@@ -8,9 +8,24 @@
             text-transform: capitalize;
         }
     }
-    .card-image {
-    }
-    .card-types {
+    .image-types-container {
+        display: flex;
+        justify-content: space-around;
+        .card-image {
+        }
+        .card-types {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .card-single-type {
+                margin: 2px 5px;
+                padding: 3px 6px;
+                width: 65px;
+                text-align: center;
+                border-radius: 10px;
+                text-transform: capitalize;
+            }
+        }
     }
     .card-info {
         display: flex;

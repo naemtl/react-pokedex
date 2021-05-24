@@ -2,8 +2,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pokedex-container .pokemon-list-container .pokemon-list {
@@ -24,6 +25,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  text-transform: capitalize;
 }
 
 .pokedex-container .pokemon-list-container .pokemon-list .pokemon-list-item:hover {
@@ -32,7 +34,7 @@
 }
 
 .pokedex-container .pokemon-card-container {
-  background-color: #a860a0;
+  background-color: #93548b;
   width: 320px;
 }
 /*# sourceMappingURL=styles.css.map */

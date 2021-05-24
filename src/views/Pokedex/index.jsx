@@ -70,7 +70,7 @@ const Pokedex = () => {
                     loading ? <div><Icon className="loading-icon" icon={pokeballIcon} /></div> : (
                         <>
                             <div className="pokemon-card-container">
-                                {selectedPokemon ? <Card pokemon={selectedPokemon} /> : "Select a Pokemon"}
+                                <Card pokemon={selectedPokemon} />
                             </div>
                             <div className="pokemon-list-container">
                                 <div className="pokemon-list">
