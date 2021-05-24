@@ -30,7 +30,6 @@ const Card = ({ pokemon }) => {
                     <p>{pokemon.abilities[0].ability.name}</p>
                 </div>
             </div>
-
         </div>
     )
 }
