@@ -4,7 +4,7 @@ import pokeballIcon from '@iconify-icons/mdi/pokeball';
 
 import Card from "../../components/Card";
 
-import { loadPokemonArray } from "../../helpers/pokedex";
+import { loadPokemonArray, parseEvolutionData } from "../../helpers/pokedex";
 import { getAllPokemon } from "../../services";
 
 import "./styles.css"
@@ -27,23 +27,6 @@ const Pokedex = () => {
         }
         fetchData()
     }, [])
-
-    // const loadPokemonArray = async data => {
-    //     const pokemonArray = await Promise.all(
-    //         data.map(async pokemon => {
-    //             const pokemonEntry = await getSinglePokemon(pokemon.url)
-    //             const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
-    //             const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain)
-    //             const pokemonObject = {
-    //                 pokemonEntry,
-    //                 pokemonSpecies,
-    //                 pokemonEvolutionChain
-    //             }
-    //             return pokemonObject
-    //         }))
-
-    //     setPokemonData(pokemonArray)
-    // }
 
     const next = async () => {
         setLoading(true)
@@ -70,26 +53,6 @@ const Pokedex = () => {
         setNextUrl(data.next)
         setPrevUrl(data.previous)
         setLoading(false)
-    }
-
-    const parseEvolutionData = evolutionChain => {
-        const evoChain = [];
-        let evoData = evolutionChain.chain;
-
-        do {
-            const evoDetails = evoData['evolution_details'][0];
-
-            evoChain.push({
-                "species_name": evoData.species.name,
-                "min_level": !evoDetails ? 1 : evoDetails.min_level,
-                "trigger_name": !evoDetails ? null : evoDetails.trigger.name,
-                "item": !evoDetails ? null : evoDetails.item
-            });
-
-            evoData = evoData['evolves_to'][0];
-        } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
-
-        return evoChain
     }
 
     const pokedexListEntryOnClick = (pokemonEntry, pokemonEvolutionChain) => {
