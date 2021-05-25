@@ -5,6 +5,7 @@ import typeColors from "../../helpers/typeColors";
 import "./styles.css"
 
 const Card = ({ pokemon, evolvesToArray }) => {
+    console.log(evolvesToArray);
     return (
         <div className="card-container-inner">
             <div className="card-screen">
@@ -40,7 +41,7 @@ const Card = ({ pokemon, evolvesToArray }) => {
                             <div className="card-data card-evolution-container">
                                 <div className="title">Evolution family</div>
                                 <div className="card-evolution-list">
-                                    {!evolvesToArray || evolvesToArray.length === 1 ? "Not applicable" : (
+                                    {!evolvesToArray || evolvesToArray.length <= 1 ? "Not applicable" : (
                                         evolvesToArray.map((evolution, i) => (
                                             <div className="evolution-name" key={i}>{`${i + 1}. ${evolution.species_name}`}</div>
                                         ))
