@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from "../Footer";
 import Navbar from "../Navbar";
 import Pokedex from "../Pokedex";
 
@@ -11,6 +12,7 @@ const App = () => {
         <>
             <Navbar />
             <Pokedex />
+            <Footer />
         </>
     )
 }

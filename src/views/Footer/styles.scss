@@ -1,0 +1,16 @@
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+    a {
+        color: #69385c;
+        &:hover {
+            color: #715b64;
+            text-decoration: underline;
+        }
+    }
+}
