@@ -40,7 +40,7 @@ const Card = ({ pokemon, evolutionChain }) => {
                             <div className="card-data card-evolution-container">
                                 <div className="title">Evolutions:</div>
                                 <div className="card-evolution-list">
-                                    {!evolutionChain ? "Not applicable" : (
+                                    {!evolutionChain ? "None found" : (
                                         evolutionChain.map(evolution => (
                                             <div>{evolution}</div>
                                         ))

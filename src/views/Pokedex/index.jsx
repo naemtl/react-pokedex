@@ -4,13 +4,14 @@ import pokeballIcon from '@iconify-icons/mdi/pokeball';
 
 import Card from "../../components/Card";
 
-import { getAllPokemon, getSinglePokemon } from "../../services";
+import { getAllPokemon, getSinglePokemon, getSinglePokemonSpecies } from "../../services";
 
 import "./styles.css"
 
 const Pokedex = () => {
     const [pokemonData, setPokemonData] = useState([])
     const [selectedPokemon, setSelectedPokemon] = useState(null)
+    // const [evolutionChain, setEvolutionChain] = useState(null)
     const [nextUrl, setNextUrl] = useState("")
     const [prevUrl, setPrevUrl] = useState("")
     const [loading, setLoading] = useState(true)
@@ -20,17 +21,23 @@ const Pokedex = () => {
             const data = await getAllPokemon()
             setNextUrl(data.next)
             setPrevUrl(data.previous)
-            await loadPokemonPage(data.results)
+            await loadPokemonArray(data.results)
             setLoading(false)
         }
         fetchData()
     }, [])
 
-    const loadPokemonPage = async data => {
+    const loadPokemonArray = async data => {
         const pokemonArray = await Promise.all(
             data.map(async pokemon => {
                 const pokemonEntry = await getSinglePokemon(pokemon.url)
-                return pokemonEntry
+                const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
+                const pokemonObject = {
+                    pokemonEntry,
+                    pokemonSpecies
+                }
+                // console.log(pokemonObject);
+                return pokemonObject
             }))
 
         setPokemonData(pokemonArray)
@@ -42,10 +49,10 @@ const Pokedex = () => {
 
         if (data.results[10].name === "mew") {
             const newResults = data.results.slice(0, 11)
-            await loadPokemonPage(newResults)
+            await loadPokemonArray(newResults)
             setNextUrl("")
         } else {
-            await loadPokemonPage(data.results)
+            await loadPokemonArray(data.results)
             setNextUrl(data.next)
         }
 
@@ -57,7 +64,7 @@ const Pokedex = () => {
         if (!prevUrl) return
         setLoading(true)
         const data = await getAllPokemon(prevUrl)
-        await loadPokemonPage(data.results)
+        await loadPokemonArray(data.results)
         setNextUrl(data.next)
         setPrevUrl(data.previous)
         setLoading(false)
@@ -96,9 +103,10 @@ const Pokedex = () => {
                                             <Icon className="loading-icon" icon={pokeballIcon} />
                                         </div>
                                     ) : (pokemonData.map((pokemon) => {
+                                        const { pokemonEntry } = pokemon
                                         return (
-                                            <div className="pokedex-list-item" key={pokemon.id} onClick={() => setSelectedPokemon(pokemon)}>
-                                                {`${pokemon.id}. ${pokemon.name}`}
+                                            <div className="pokedex-list-item" key={pokemonEntry.id} onClick={() => setSelectedPokemon(pokemonEntry)}>
+                                                {`${pokemonEntry.id}. ${pokemonEntry.name}`}
                                             </div>
                                         )
                                     }))}

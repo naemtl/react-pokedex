@@ -17,3 +17,12 @@ export async function getSinglePokemon(url) {
         console.error("Request failed", error)
     }
 }
+
+export async function getSinglePokemonSpecies(name) {
+    try {
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon-species/" + name)
+        return response.data
+    } catch (error) {
+        console.error("Request failed", error)
+    }
+}
