@@ -157,6 +157,10 @@
   border-radius: 10px;
 }
 
+.pokedex-container .pokedex-container-inner .pokedex-list-container .pokedex-list-container-inner .pokedex-list .pokedex-list-item:active {
+  background-color: #8ed0f6;
+}
+
 .pokedex-container .pokedex-container-inner .pokedex-list-container .pokedex-list-container-inner .pokedex-list .loading-icon-container {
   display: -webkit-box;
   display: -ms-flexbox;
