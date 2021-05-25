@@ -88,6 +88,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 90px;
 }
 
 .card-container-inner .card-screen .card-info-container .card-evolution-container .card-evolution-list {

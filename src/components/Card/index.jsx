@@ -4,7 +4,7 @@ import typeColors from "../../helpers/typeColors";
 
 import "./styles.css"
 
-const Card = ({ pokemon }) => {
+const Card = ({ pokemon, evolutionChain }) => {
     return (
         <div className="card-container-inner">
             <div className="card-screen">
@@ -40,9 +40,11 @@ const Card = ({ pokemon }) => {
                             <div className="card-data card-evolution-container">
                                 <div className="title">Evolutions:</div>
                                 <div className="card-evolution-list">
-                                    <div>Kangaskhan</div>
-                                    <div>Charmeleon</div>
-                                    <div>Hitmonchan</div>
+                                    {!evolutionChain ? "Not applicable" : (
+                                        evolutionChain.map(evolution => (
+                                            <div>{evolution}</div>
+                                        ))
+                                    )}
                                 </div>
                             </div>
                         </div>
