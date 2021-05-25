@@ -11,7 +11,8 @@
           align-items: center;
   position: fixed;
   bottom: 0;
-  height: 75px;
+  height: 50px;
+  background-color: #e4e4e4;
 }
 
 .footer-container a {
