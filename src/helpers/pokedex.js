@@ -51,7 +51,8 @@ export function parseEvolutionData(evolutionChain) {
 
 
 function checkIfNextGen(name) {
-    if (name === "espeon"
+    if (
+        name === "espeon"
         || name === "umbreon"
         || name === "leafeon"
         || name === "glaceon"

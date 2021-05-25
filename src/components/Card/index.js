@@ -5,7 +5,6 @@ import typeColors from "../../helpers/typeColors";
 import "./styles.css"
 
 const Card = ({ pokemon, evolvesToArray }) => {
-    console.log(evolvesToArray);
     return (
         <div className="card-container-inner">
             <div className="card-screen">
