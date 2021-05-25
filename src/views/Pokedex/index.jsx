@@ -4,7 +4,8 @@ import pokeballIcon from '@iconify-icons/mdi/pokeball';
 
 import Card from "../../components/Card";
 
-import { getAllPokemon, getSinglePokemon, getSinglePokemonEvolutionChain, getSinglePokemonSpecies } from "../../services";
+import { loadPokemonArray } from "../../helpers/pokedex";
+import { getAllPokemon } from "../../services";
 
 import "./styles.css"
 
@@ -21,28 +22,28 @@ const Pokedex = () => {
             const data = await getAllPokemon()
             setNextUrl(data.next)
             setPrevUrl(data.previous)
-            await loadPokemonArray(data.results)
+            await loadPokemonArray(data.results, setPokemonData)
             setLoading(false)
         }
         fetchData()
     }, [])
 
-    const loadPokemonArray = async data => {
-        const pokemonArray = await Promise.all(
-            data.map(async pokemon => {
-                const pokemonEntry = await getSinglePokemon(pokemon.url)
-                const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
-                const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain)
-                const pokemonObject = {
-                    pokemonEntry,
-                    pokemonSpecies,
-                    pokemonEvolutionChain
-                }
-                return pokemonObject
-            }))
+    // const loadPokemonArray = async data => {
+    //     const pokemonArray = await Promise.all(
+    //         data.map(async pokemon => {
+    //             const pokemonEntry = await getSinglePokemon(pokemon.url)
+    //             const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
+    //             const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain)
+    //             const pokemonObject = {
+    //                 pokemonEntry,
+    //                 pokemonSpecies,
+    //                 pokemonEvolutionChain
+    //             }
+    //             return pokemonObject
+    //         }))
 
-        setPokemonData(pokemonArray)
-    }
+    //     setPokemonData(pokemonArray)
+    // }
 
     const next = async () => {
         setLoading(true)
