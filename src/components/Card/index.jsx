@@ -38,7 +38,7 @@ const Card = ({ pokemon, evolvesToArray }) => {
                                 </div>
                             </div>
                             <div className="card-data card-evolution-container">
-                                <div className="title">Evolution family:</div>
+                                <div className="title">Evolution family</div>
                                 <div className="card-evolution-list">
                                     {!evolvesToArray || evolvesToArray.length === 1 ? "Not applicable" : (
                                         evolvesToArray.map((evolution, i) => (

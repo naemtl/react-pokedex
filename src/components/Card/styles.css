@@ -97,6 +97,10 @@
   height: 91px;
 }
 
+.card-container-inner .card-screen .card-info-container .card-evolution-container .title {
+  text-decoration: underline;
+}
+
 .card-container-inner .card-screen .card-info-container .card-evolution-container .card-evolution-list {
   display: -ms-grid;
   display: grid;

@@ -1,4 +1,4 @@
-import { getAllPokemon, getSinglePokemon, getSinglePokemonEvolutionChain, getSinglePokemonSpecies } from "../services";
+import { getSinglePokemon, getSinglePokemonEvolutionChain, getSinglePokemonSpecies } from "../services";
 
 export async function loadPokemonArray(data, setPokemonData) {
     const pokemonArray = await Promise.all(

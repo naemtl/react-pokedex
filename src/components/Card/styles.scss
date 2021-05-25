@@ -58,6 +58,9 @@
             .card-evolution-container {
                 flex-direction: column;
                 height: 91px;
+                .title {
+                    text-decoration: underline;
+                }
                 .card-evolution-list {
                     display: grid;
                     grid-template-columns: repeat(2, 105px);
