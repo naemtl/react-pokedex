@@ -34,10 +34,10 @@ const Pokedex = () => {
 
         if (data.results[10].name === "mew") {
             const newResults = data.results.slice(0, 11)
-            await loadPokemonArray(newResults)
+            await loadPokemonArray(newResults, setPokemonData)
             setNextUrl("")
         } else {
-            await loadPokemonArray(data.results)
+            await loadPokemonArray(data.results, setPokemonData)
             setNextUrl(data.next)
         }
 
@@ -49,7 +49,7 @@ const Pokedex = () => {
         if (!prevUrl) return
         setLoading(true)
         const data = await getAllPokemon(prevUrl)
-        await loadPokemonArray(data.results)
+        await loadPokemonArray(data.results, setPokemonData)
         setNextUrl(data.next)
         setPrevUrl(data.previous)
         setLoading(false)
