@@ -4,7 +4,7 @@ import typeColors from "../../helpers/typeColors";
 
 import "./styles.css"
 
-const Card = ({ pokemon, evolutionChain }) => {
+const Card = ({ pokemon, evolvesToArray }) => {
     return (
         <div className="card-container-inner">
             <div className="card-screen">
@@ -38,11 +38,11 @@ const Card = ({ pokemon, evolutionChain }) => {
                                 </div>
                             </div>
                             <div className="card-data card-evolution-container">
-                                <div className="title">Evolutions:</div>
+                                <div className="title">Evolution family:</div>
                                 <div className="card-evolution-list">
-                                    {!evolutionChain ? "None found" : (
-                                        evolutionChain.map(evolution => (
-                                            <div>{evolution}</div>
+                                    {!evolvesToArray || evolvesToArray.length === 1 ? "Not applicable" : (
+                                        evolvesToArray.map((evolution, i) => (
+                                            <div className="evolution-name" key={i}>{`${i + 1}. ${evolution.species_name}`}</div>
                                         ))
                                     )}
                                 </div>

@@ -4,14 +4,14 @@ import pokeballIcon from '@iconify-icons/mdi/pokeball';
 
 import Card from "../../components/Card";
 
-import { getAllPokemon, getSinglePokemon, getSinglePokemonSpecies } from "../../services";
+import { getAllPokemon, getSinglePokemon, getSinglePokemonEvolutionChain, getSinglePokemonSpecies } from "../../services";
 
 import "./styles.css"
 
 const Pokedex = () => {
     const [pokemonData, setPokemonData] = useState([])
     const [selectedPokemon, setSelectedPokemon] = useState(null)
-    // const [evolutionChain, setEvolutionChain] = useState(null)
+    const [evolvesToArray, setEvolvesToArray] = useState(null)
     const [nextUrl, setNextUrl] = useState("")
     const [prevUrl, setPrevUrl] = useState("")
     const [loading, setLoading] = useState(true)
@@ -32,11 +32,12 @@ const Pokedex = () => {
             data.map(async pokemon => {
                 const pokemonEntry = await getSinglePokemon(pokemon.url)
                 const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
+                const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain)
                 const pokemonObject = {
                     pokemonEntry,
-                    pokemonSpecies
+                    pokemonSpecies,
+                    pokemonEvolutionChain
                 }
-                // console.log(pokemonObject);
                 return pokemonObject
             }))
 
@@ -70,6 +71,31 @@ const Pokedex = () => {
         setLoading(false)
     }
 
+    const parseEvolutionData = evolutionChain => {
+        const evoChain = [];
+        let evoData = evolutionChain.chain;
+
+        do {
+            const evoDetails = evoData['evolution_details'][0];
+
+            evoChain.push({
+                "species_name": evoData.species.name,
+                "min_level": !evoDetails ? 1 : evoDetails.min_level,
+                "trigger_name": !evoDetails ? null : evoDetails.trigger.name,
+                "item": !evoDetails ? null : evoDetails.item
+            });
+
+            evoData = evoData['evolves_to'][0];
+        } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
+
+        return evoChain
+    }
+
+    const pokedexListEntryOnClick = (pokemonEntry, pokemonEvolutionChain) => {
+        setSelectedPokemon(pokemonEntry)
+        setEvolvesToArray(parseEvolutionData(pokemonEvolutionChain))
+    }
+
     return (
         <div className="master-container">
             <div className="pokedex-container">
@@ -88,7 +114,7 @@ const Pokedex = () => {
                                 <div className="green"></div>
                             </div>
                         </div>
-                        <Card pokemon={selectedPokemon} />
+                        <Card pokemon={selectedPokemon} evolvesToArray={evolvesToArray} />
                     </div>
                     <div className="pokedex-hinge">
                         <div></div>
@@ -103,9 +129,9 @@ const Pokedex = () => {
                                             <Icon className="loading-icon" icon={pokeballIcon} />
                                         </div>
                                     ) : (pokemonData.map((pokemon) => {
-                                        const { pokemonEntry } = pokemon
+                                        const { pokemonEntry, pokemonEvolutionChain } = pokemon
                                         return (
-                                            <div className="pokedex-list-item" key={pokemonEntry.id} onClick={() => setSelectedPokemon(pokemonEntry)}>
+                                            <div className="pokedex-list-item" key={pokemonEntry.id} onClick={() => pokedexListEntryOnClick(pokemonEntry, pokemonEvolutionChain)}>
                                                 {`${pokemonEntry.id}. ${pokemonEntry.name}`}
                                             </div>
                                         )

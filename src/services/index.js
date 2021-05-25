@@ -26,3 +26,12 @@ export async function getSinglePokemonSpecies(name) {
         console.error("Request failed", error)
     }
 }
+
+export async function getSinglePokemonEvolutionChain(evolutionChain) {
+    try {
+        const response = await axios.get(evolutionChain.url)
+        return response.data
+    } catch (error) {
+        console.error("Request failed", error)
+    }
+}
