@@ -42,7 +42,7 @@ const Card = ({ pokemon, evolvesToArray }) => {
                                 <div className="card-evolution-list">
                                     {!evolvesToArray || evolvesToArray.length <= 1 ? "Not applicable" : (
                                         evolvesToArray.map((evolution, i) => (
-                                            <div className="evolution-name" key={i}>{`${i + 1}. ${evolution.species_name}`}</div>
+                                            <div className="evolution-name" key={i}>{evolution.species_name}</div>
                                         ))
                                     )}
                                 </div>
