@@ -27,9 +27,9 @@ export async function getSinglePokemonSpecies(name) {
     }
 }
 
-export async function getSinglePokemonEvolutionChain(evolutionChain) {
+export async function getSinglePokemonEvolutionChain(url) {
     try {
-        const response = await axios.get(evolutionChain.url)
+        const response = await axios.get(url)
         return response.data
     } catch (error) {
         console.error("Request failed", error)

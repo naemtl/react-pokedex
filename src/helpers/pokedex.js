@@ -5,7 +5,7 @@ export async function loadPokemonArray(data, setPokemonData) {
         data.map(async pokemon => {
             const pokemonEntry = await getSinglePokemon(pokemon.url)
             const pokemonSpecies = await getSinglePokemonSpecies(pokemon.name)
-            const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain)
+            const pokemonEvolutionChain = await getSinglePokemonEvolutionChain(pokemonSpecies.evolution_chain.url)
             const pokemonObject = {
                 pokemonEntry,
                 pokemonSpecies,
@@ -50,43 +50,43 @@ export function parseEvolutionData(evolutionChain) {
 }
 
 
-function checkIfNextGen(name) {
+function checkIfNextGen(evoName) {
     if (
-        name === "espeon"
-        || name === "umbreon"
-        || name === "leafeon"
-        || name === "glaceon"
-        || name === "sylveon"
-        || name === "slowking"
-        || name === "steelix"
-        || name === "crobat"
-        || name === "bellossom"
-        || name === "perrserker"
-        || name === "politoed"
-        || name === "magnezone"
-        || name === "rhyperior"
-        || name === "happiny"
-        || name === "blissey"
-        || name === "tangrowth"
-        || name === "kingdra"
-        || name === "mr-rime"
-        || name === "scizor"
-        || name === "porygon2"
-        || name === "porygon-z"
-        || name === "hitmonlee"
-        || name === "hitmonchan"
-        || name === "electivire"
-        || name === "magmortar"
-        || name === "munchlax"
-        || name === "magby"
-        || name === "elekid"
-        || name === "smoochum"
-        || name === "mime-jr"
-        || name === "tyrogue"
-        || name === "hitmontop"
-        || name === "igglybuff"
-        || name === "pichu"
-        || name === "cleffa"
+        evoName === "espeon"
+        || evoName === "umbreon"
+        || evoName === "leafeon"
+        || evoName === "glaceon"
+        || evoName === "sylveon"
+        || evoName === "slowking"
+        || evoName === "steelix"
+        || evoName === "crobat"
+        || evoName === "bellossom"
+        || evoName === "perrserker"
+        || evoName === "politoed"
+        || evoName === "magnezone"
+        || evoName === "rhyperior"
+        || evoName === "happiny"
+        || evoName === "blissey"
+        || evoName === "tangrowth"
+        || evoName === "kingdra"
+        || evoName === "mr-rime"
+        || evoName === "scizor"
+        || evoName === "porygon2"
+        || evoName === "porygon-z"
+        || evoName === "hitmonlee"
+        || evoName === "hitmonchan"
+        || evoName === "electivire"
+        || evoName === "magmortar"
+        || evoName === "munchlax"
+        || evoName === "magby"
+        || evoName === "elekid"
+        || evoName === "smoochum"
+        || evoName === "mime-jr"
+        || evoName === "tyrogue"
+        || evoName === "hitmontop"
+        || evoName === "igglybuff"
+        || evoName === "pichu"
+        || evoName === "cleffa"
     ) {
         return true
     } else {
