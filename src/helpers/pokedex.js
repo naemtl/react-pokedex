@@ -75,6 +75,7 @@ function checkIfNextGen(evoName) {
         || evoName === "porygon-z"
         || evoName === "hitmonlee"
         || evoName === "hitmonchan"
+        || evoName === "lickilicky"
         || evoName === "electivire"
         || evoName === "magmortar"
         || evoName === "munchlax"
