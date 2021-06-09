@@ -63,7 +63,6 @@ const Pokedex = () => {
     return (
         <div className="master-container">
             <div className="pokedex-container">
-
                 <div className="pokedex-container-inner">
                     <div className="pokedex-card-container">
                         <div className="pokedex-camera-container">

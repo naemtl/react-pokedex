@@ -48,7 +48,7 @@ const Card = ({ pokemon, evolvesToArray }) => {
                                 </div>
                             </div>
                         </div>
-                    </>) : "Select a Pokemon!"
+                    </>) : "Select a Pokémon!"
                 }
             </div>
         </div>

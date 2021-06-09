@@ -5,7 +5,7 @@ import "./styles.css"
 const Navbar = () => {
     return (
         <nav className="nav-container">
-            Matthew's Pokedex!
+            Matthew's Pokédex!
         </nav>
     )
 }
